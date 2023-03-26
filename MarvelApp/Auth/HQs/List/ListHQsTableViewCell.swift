@@ -20,8 +20,7 @@ class ListHQsTableViewCell: UITableViewCell {
     
     private let favoriteItem: UIButton = {
        let b = UIButton()
-        b.setBackgroundImage(UIImage(systemName: "star"), for: .normal)
-        b.setBackgroundImage(UIImage(systemName: "star.fill"), for: .selected)
+        b.setBackgroundImage(UIImage(systemName: "star.fill"), for: .normal)
         return b
     }()
     
@@ -59,11 +58,13 @@ class ListHQsTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     // MARK: Custom methods
-    func setup(ex: Result) {
+    func setup(ex: Result, isFavorited: Bool) {
         self.nameLabel.text = ex.title ?? ""
         self.idLabel.text = String(ex.id ?? 0)
         self.image.downloaded(from: URL(string: "\(ex.thumbnail?.path ?? "").\(ex.thumbnail?.thumbnailExtension ?? "")")!)
         self.pageLabel.text = "Pages: \(ex.pageCount ?? 0)"
+        
+        self.favoriteItem.isHidden = !isFavorited
         
         buildViewHierarchy()
         setupConstraints()
