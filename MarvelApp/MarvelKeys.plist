@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>MarvelApiPublicKey</key>
+	<string>eb680bffde23177f8eab001bc265766a</string>
+	<key>MarvelApiPrivateKey</key>
+	<string>482951f01e5d928d77175a3a0502cd773940885e</string>
+	<key>MarvelMD5Hash</key>
+	<string>075861585cf4ee10b0b0e7804f33e57b</string>
+</dict>
+</plist>
