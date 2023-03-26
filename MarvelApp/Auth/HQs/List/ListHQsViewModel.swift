@@ -7,15 +7,47 @@
 
 import Foundation
 
+enum FavoriteListActions {
+    case add
+    case remove
+}
+
 public class ListHQsViewModel {
     
     let coordinator: MainCoordinator?
+    let favoriteKey = "favoriteHQs"
+    
+    
+    var hqs: [Result] = []
+    private var favoriteHQs: [Int] = []
     
     init(coordinator: MainCoordinator) {
         self.coordinator = coordinator
     }
     
-    func fetchHQs() async throws -> (HQs) {
+    func fetchFavorites() -> [Int] {
+        return UserDefaults.standard.array(forKey: favoriteKey) as! [Int]
+    }
+    
+    func updateFavorites(indexPath: IndexPath, action: FavoriteListActions) {
+        switch action {
+        case .add:
+            favoriteHQs.append(hqs[indexPath.row].id ?? 0)
+        case .remove:
+            let index = favoriteHQs.firstIndex { $0 == hqs[indexPath.row].id ?? 0 }
+            if let i = index {
+                favoriteHQs.remove(at: i)
+            }
+        }
+        UserDefaults.standard.set(favoriteHQs, forKey: favoriteKey)
+    }
+    
+    func isFavorited(indexPath: IndexPath) -> Bool {
+        let hqId = hqs[indexPath.row].id
+        return favoriteHQs.contains { $0 == hqId }
+    }
+    
+    func fetchHQs() async throws {
         let keys = KeysManager().apiKey
         var request = URLRequest(url: URL(string: "https://gateway.marvel.com/v1/public/comics?ts=1&apikey=\(keys.0)&hash=\(keys.1)")!)
         
@@ -29,7 +61,8 @@ public class ListHQsViewModel {
                     } else if let data = data {
                         do {
                             let list: HQs = try JSONDecoder().decode(HQs.self, from: data)
-                            continuation.resume(with: .success(list))
+                            self.hqs = list.data.results
+                            continuation.resume()
                         } catch {
                             print(String(describing: error))
                             continuation.resume(with: .failure(error))

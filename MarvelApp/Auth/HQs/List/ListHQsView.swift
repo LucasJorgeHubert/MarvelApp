@@ -11,7 +11,6 @@ class ListHQsView: UIView {
     var hqsTable: UITableView = {
         let tv = UITableView()
         tv.separatorStyle = .none
-        tv.selectionFollowsFocus = false
         return tv
     }()
     
