@@ -29,7 +29,6 @@
 		3A99D03329CC7A4300E92547 /* ListHQsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A99D03229CC7A4300E92547 /* ListHQsViewModel.swift */; };
 		3A99D03529CC7A7700E92547 /* ListHQsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A99D03429CC7A7700E92547 /* ListHQsModel.swift */; };
 		3A99D03B29CC986900E92547 /* ListHQsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A99D03A29CC986800E92547 /* ListHQsTableViewCell.swift */; };
-		3A99D03D29CC9C5800E92547 /* UIimage+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A99D03C29CC9C5700E92547 /* UIimage+extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +75,6 @@
 		3A99D03229CC7A4300E92547 /* ListHQsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHQsViewModel.swift; sourceTree = "<group>"; };
 		3A99D03429CC7A7700E92547 /* ListHQsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHQsModel.swift; sourceTree = "<group>"; };
 		3A99D03A29CC986800E92547 /* ListHQsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHQsTableViewCell.swift; sourceTree = "<group>"; };
-		3A99D03C29CC9C5700E92547 /* UIimage+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIimage+extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +136,6 @@
 				3A563CE229CAAD6B00A5888A /* MarvelKeys.plist */,
 				3A563CE629CAAE4700A5888A /* Loading+ViewController.swift */,
 				3A99D02A29CBBEF300E92547 /* Utils.swift */,
-				3A99D03C29CC9C5700E92547 /* UIimage+extensions.swift */,
 				3A563CE829CAAE4F00A5888A /* Toast+ViewController.swift */,
 				3A563CE429CAAE1000A5888A /* MainCoordinator.swift */,
 				3A563CEA29CAB06100A5888A /* KeysManager.swift */,
@@ -336,7 +333,6 @@
 				3A99D03B29CC986900E92547 /* ListHQsTableViewCell.swift in Sources */,
 				3A99D03129CC7A2000E92547 /* ListHQsViewController.swift in Sources */,
 				3A563CE929CAAE4F00A5888A /* Toast+ViewController.swift in Sources */,
-				3A99D03D29CC9C5800E92547 /* UIimage+extensions.swift in Sources */,
 				3A563CB729CAA97400A5888A /* ViewController.swift in Sources */,
 				3A563CEB29CAB06100A5888A /* KeysManager.swift in Sources */,
 				3A563CF129CAB1E600A5888A /* LoginView.swift in Sources */,
