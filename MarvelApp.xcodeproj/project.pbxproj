@@ -127,6 +127,7 @@
 		3A563CB129CAA97400A5888A /* MarvelApp */ = {
 			isa = PBXGroup;
 			children = (
+				3A99D02C29CC776D00E92547 /* HQs */,
 				3A563CEC29CAB18900A5888A /* Auth */,
 				3A563CB229CAA97400A5888A /* AppDelegate.swift */,
 				3A563CB429CAA97400A5888A /* SceneDelegate.swift */,
@@ -165,7 +166,6 @@
 		3A563CEC29CAB18900A5888A /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				3A99D02C29CC776D00E92547 /* HQs */,
 				3A563CED29CAB18E00A5888A /* Login */,
 			);
 			path = Auth;
@@ -186,7 +186,8 @@
 			children = (
 				3A99D02D29CC791E00E92547 /* List */,
 			);
-			path = HQs;
+			name = HQs;
+			path = Auth/HQs;
 			sourceTree = "<group>";
 		};
 		3A99D02D29CC791E00E92547 /* List */ = {
