@@ -111,7 +111,14 @@ extension ListHQsViewController: UITableViewDelegate, UITableViewDataSource {
             contextItem.backgroundColor = .systemGreen
         }
         
-        let swipeActions = UISwipeActionsConfiguration(actions: [contextItem])
+        let addToCart = UIContextualAction(style: .normal, title: "Add to cart") {  (contextualAction, view, boolValue) in
+            self.viewModel.addToCart(indexPath: indexPath)
+            self.mainView.hqsTable.reloadData()
+        }
+        addToCart.image = UIImage(systemName: "cart.fill.badge.plus")
+        addToCart.backgroundColor = .systemBlue
+        
+        let swipeActions = UISwipeActionsConfiguration(actions: [contextItem, addToCart])
 
         return swipeActions
     }
