@@ -6,12 +6,15 @@ protocol Coordinator {
     var navigationController: UINavigationController { get set }
     
     func start()
+    func openApp()
+    func openHQDetail(hq: HQ)
     func pop()
 }
 
 class MainCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
+    var cartManager: CartManager = CartManager()
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -35,7 +38,7 @@ class MainCoordinator: Coordinator {
     }
     
     func openHQDetail(hq: HQ) {
-        let vm = DetailHQViewModel(coordinator: self, hq: hq)
+        let vm = DetailHQViewModel(coordinator: self,hq: hq)
         let vc = DetailHQViewController(viewModel: vm)
         navigationController.pushViewController(vc, animated: false)
     }

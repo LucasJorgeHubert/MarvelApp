@@ -15,8 +15,8 @@ enum FavoriteListActions {
 public class ListHQsViewModel {
     
     let coordinator: MainCoordinator?
-    let favoriteKey = "favoriteHQs"
     
+    let favoriteKey = "favoriteHQs"
     
     var hqs: [HQ] = []
     private var favoriteHQs: [Int] = []
@@ -47,8 +47,20 @@ public class ListHQsViewModel {
         return favoriteHQs.contains { $0 == hqId }
     }
     
+    func itemIsInCart(indexPath: IndexPath) -> Bool {
+        return self.coordinator?.cartManager.itemIsInCart(hq: hqs[indexPath.row]) ?? false
+    }
+    
     func openDetail(indexPath: IndexPath) {
         self.coordinator?.openHQDetail(hq: self.hqs[indexPath.row])
+    }
+    
+    func addToCart(indexPath: IndexPath) {
+        self.coordinator?.cartManager.addItem(item: hqs[indexPath.row])
+    }
+    
+    func removeFromCart(indexPath: IndexPath) {
+        self.coordinator?.cartManager.removeItem(id: hqs[indexPath.row].id ?? 0)
     }
     
     func fetchHQs() async throws {

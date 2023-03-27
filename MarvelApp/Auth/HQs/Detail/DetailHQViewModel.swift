@@ -18,7 +18,7 @@ class DetailHQViewModel {
     
     func buyItem()  {
         if Utils().isAuthenticated() {
-            
+            self.coordinator?.cartManager.addItem(item: hq!)
         }
     }
 }

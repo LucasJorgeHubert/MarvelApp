@@ -29,14 +29,14 @@ class DetailHQView: UIView {
     private let issueLabel: UILabel = {
         let l = UILabel()
         l.font = .systemFont(ofSize: 14, weight: .thin)
-        l.numberOfLines = 3
+        l.numberOfLines = 0
         return l
     }()
     
     private let priceLabel: UILabel = {
         let l = UILabel()
         l.font = .systemFont(ofSize: 16, weight: .regular)
-        l.numberOfLines = 3
+        l.numberOfLines = 0
         return l
     }()
     
@@ -149,6 +149,4 @@ class DetailHQView: UIView {
             buyButton.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -16),
         ])
     }
-    
-
 }
