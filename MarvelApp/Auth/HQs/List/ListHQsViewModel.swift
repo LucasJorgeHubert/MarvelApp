@@ -24,7 +24,7 @@ public class ListHQsViewModel {
     var searching = false
     var hqs: [HQ] = []
     
-    private var favoriteHQs: [Int] = []
+    var favoriteHQs: [Int] = []
     
     init(coordinator: MainCoordinator) {
         self.coordinator = coordinator
@@ -105,6 +105,7 @@ public class ListHQsViewModel {
                         continuation.resume(with: .failure(error!))
                     } else if let data = data {
                         do {
+                            self.hqs = []
                             let list: HQs = try JSONDecoder().decode(HQs.self, from: data)
                             self.hqs = list.data.results
                             continuation.resume()
