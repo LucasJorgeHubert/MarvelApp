@@ -8,22 +8,48 @@
 import UIKit
 
 class DetailHQViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    private let viewModel: DetailHQViewModel
+    
+    private let mainView = DetailHQView()
+    
+    init(viewModel: DetailHQViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-    */
+    
+    override func loadView() {
+        super.loadView()
+        view = mainView
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationItem.title = "Detail"
+        self.navigationItem.largeTitleDisplayMode = .automatic
+        self.navigationItem.hidesBackButton = false
+        self.mainView.buyButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        setupLabels()
+    }
+    
+    func setupLabels() {
+        self.mainView.setupLabels(
+            title: self.viewModel.hq?.title ?? "",
+            issue: self.viewModel.hq?.issueNumber ?? 0,
+            prices: self.viewModel.hq?.prices ?? []
+        )
+        self.mainView.setupImage(
+            imageURL: self.viewModel.hq?.thumbnail ?? Thumbnail(path: "", thumbnailExtension: "")
+        )
+    }
+    
+    @objc func buttonAction(sender: UIButton!) {
+        self.showSpinner(onView: self.mainView)
+        self.showToast(text: "Product added in cart", type: .success, onView: self.mainView)
+    }
 
 }

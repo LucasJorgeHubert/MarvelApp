@@ -34,4 +34,9 @@ class MainCoordinator: Coordinator {
         navigationController.pushViewController(vc, animated: false)
     }
     
+    func openHQDetail(hq: HQ) {
+        let vm = DetailHQViewModel(coordinator: self, hq: hq)
+        let vc = DetailHQViewController(viewModel: vm)
+        navigationController.pushViewController(vc, animated: false)
+    }
 }

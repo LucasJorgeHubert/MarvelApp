@@ -8,5 +8,17 @@
 import Foundation
 
 class DetailHQViewModel {
+    let coordinator: MainCoordinator?
+    let hq: HQ?
     
+    init(coordinator: MainCoordinator, hq: HQ) {
+        self.coordinator = coordinator
+        self.hq = hq
+    }
+    
+    func buyItem()  {
+        if Utils().isAuthenticated() {
+            
+        }
+    }
 }

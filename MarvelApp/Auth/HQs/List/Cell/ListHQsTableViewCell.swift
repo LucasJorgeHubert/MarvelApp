@@ -58,7 +58,7 @@ class ListHQsTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     // MARK: Custom methods
-    func setup(ex: Result, isFavorited: Bool) {
+    func setup(ex: HQ, isFavorited: Bool) {
         self.nameLabel.text = ex.title ?? ""
         self.idLabel.text = String(ex.id ?? 0)
         self.image.downloaded(from: URL(string: "\(ex.thumbnail?.path ?? "").\(ex.thumbnail?.thumbnailExtension ?? "")")!)
