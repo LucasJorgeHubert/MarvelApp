@@ -52,6 +52,12 @@ class ListHQsViewController: UIViewController {
         ]
     }
     
+    func setupPageControl() {
+        self.mainView.currentPage.text = "\(self.viewModel.offset) - \(self.viewModel.limit)"
+        self.mainView.nextPageButton.addTarget(self, action: #selector(nextPage), for: .touchUpInside)
+        self.mainView.previusPageButton.addTarget(self, action: #selector(prevPage), for: .touchUpInside)
+    }
+    
     private func setupTable() {
         mainView.hqsTable.dataSource = self
         mainView.hqsTable.delegate = self
@@ -62,12 +68,23 @@ class ListHQsViewController: UIViewController {
         /// TODO: open cart
     }
     
+    @objc func nextPage() {
+        self.viewModel.nextPage()
+        setupTableData()
+    }
+    
+    @objc func prevPage() {
+        self.viewModel.previusPage()
+        setupTableData()
+    }
+    
     private func setupTableData() {
         self.showSpinner(onView: self.mainView)
         Task.init {
             do {
                 try await self.viewModel.fetchHQs()
                 self.mainView.hqsTable.reloadData()
+                self.setupPageControl()
                 self.removeSpinner()
             } catch {
                 self.removeSpinner()
