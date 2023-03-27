@@ -34,7 +34,7 @@ struct DataClass: Codable {
     let limit: Int?
     let total: Int?
     let count: Int?
-    let results: [Result]
+    let results: [HQ]
 
     enum CodingKeys: String, CodingKey {
         case offset = "offset"
@@ -46,7 +46,7 @@ struct DataClass: Codable {
 }
 
 // MARK: - Result
-struct Result: Codable {
+struct HQ: Codable {
     let id: Int?
     let digitalID: Int?
     let title: String?

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A50CB1129D0EC6D0069A6E0 /* DetailHQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50CB1029D0EC6D0069A6E0 /* DetailHQViewController.swift */; };
+		3A50CB1329D0EC860069A6E0 /* DetailHQView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50CB1229D0EC860069A6E0 /* DetailHQView.swift */; };
+		3A50CB1529D0EC920069A6E0 /* DetailHQViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50CB1429D0EC920069A6E0 /* DetailHQViewModel.swift */; };
+		3A50CB1929D12BE00069A6E0 /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50CB1829D12BE00069A6E0 /* CartManager.swift */; };
 		3A563CB329CAA97400A5888A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A563CB229CAA97400A5888A /* AppDelegate.swift */; };
 		3A563CB529CAA97400A5888A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A563CB429CAA97400A5888A /* SceneDelegate.swift */; };
 		3A563CB729CAA97400A5888A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A563CB629CAA97400A5888A /* ViewController.swift */; };
@@ -29,7 +33,6 @@
 		3A99D03329CC7A4300E92547 /* ListHQsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A99D03229CC7A4300E92547 /* ListHQsViewModel.swift */; };
 		3A99D03529CC7A7700E92547 /* ListHQsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A99D03429CC7A7700E92547 /* ListHQsModel.swift */; };
 		3A99D03B29CC986900E92547 /* ListHQsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A99D03A29CC986800E92547 /* ListHQsTableViewCell.swift */; };
-		3A99D03D29CC9C5800E92547 /* UIimage+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A99D03C29CC9C5700E92547 /* UIimage+extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A50CB1029D0EC6D0069A6E0 /* DetailHQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHQViewController.swift; sourceTree = "<group>"; };
+		3A50CB1229D0EC860069A6E0 /* DetailHQView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHQView.swift; sourceTree = "<group>"; };
+		3A50CB1429D0EC920069A6E0 /* DetailHQViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHQViewModel.swift; sourceTree = "<group>"; };
+		3A50CB1829D12BE00069A6E0 /* CartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
 		3A563CAF29CAA97400A5888A /* MarvelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A563CB229CAA97400A5888A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A563CB429CAA97400A5888A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,7 +83,6 @@
 		3A99D03229CC7A4300E92547 /* ListHQsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHQsViewModel.swift; sourceTree = "<group>"; };
 		3A99D03429CC7A7700E92547 /* ListHQsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHQsModel.swift; sourceTree = "<group>"; };
 		3A99D03A29CC986800E92547 /* ListHQsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHQsTableViewCell.swift; sourceTree = "<group>"; };
-		3A99D03C29CC9C5700E92547 /* UIimage+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIimage+extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A50CB0F29D0EC500069A6E0 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				3A50CB1029D0EC6D0069A6E0 /* DetailHQViewController.swift */,
+				3A50CB1429D0EC920069A6E0 /* DetailHQViewModel.swift */,
+				3A50CB1229D0EC860069A6E0 /* DetailHQView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		3A50CB1629D0ECBE0069A6E0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3A99D03A29CC986800E92547 /* ListHQsTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		3A50CB1729D12BBF0069A6E0 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				3A50CB1829D12BE00069A6E0 /* CartManager.swift */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
 		3A563CA629CAA97300A5888A = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +159,8 @@
 		3A563CB129CAA97400A5888A /* MarvelApp */ = {
 			isa = PBXGroup;
 			children = (
+				3A50CB1729D12BBF0069A6E0 /* Cart */,
+				3A99D02C29CC776D00E92547 /* HQs */,
 				3A563CEC29CAB18900A5888A /* Auth */,
 				3A563CB229CAA97400A5888A /* AppDelegate.swift */,
 				3A563CB429CAA97400A5888A /* SceneDelegate.swift */,
@@ -137,7 +171,6 @@
 				3A563CE229CAAD6B00A5888A /* MarvelKeys.plist */,
 				3A563CE629CAAE4700A5888A /* Loading+ViewController.swift */,
 				3A99D02A29CBBEF300E92547 /* Utils.swift */,
-				3A99D03C29CC9C5700E92547 /* UIimage+extensions.swift */,
 				3A563CE829CAAE4F00A5888A /* Toast+ViewController.swift */,
 				3A563CE429CAAE1000A5888A /* MainCoordinator.swift */,
 				3A563CEA29CAB06100A5888A /* KeysManager.swift */,
@@ -165,7 +198,6 @@
 		3A563CEC29CAB18900A5888A /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				3A99D02C29CC776D00E92547 /* HQs */,
 				3A563CED29CAB18E00A5888A /* Login */,
 			);
 			path = Auth;
@@ -184,16 +216,18 @@
 		3A99D02C29CC776D00E92547 /* HQs */ = {
 			isa = PBXGroup;
 			children = (
+				3A50CB0F29D0EC500069A6E0 /* Detail */,
 				3A99D02D29CC791E00E92547 /* List */,
 			);
-			path = HQs;
+			name = HQs;
+			path = Auth/HQs;
 			sourceTree = "<group>";
 		};
 		3A99D02D29CC791E00E92547 /* List */ = {
 			isa = PBXGroup;
 			children = (
 				3A99D02E29CC79F000E92547 /* ListHQsView.swift */,
-				3A99D03A29CC986800E92547 /* ListHQsTableViewCell.swift */,
+				3A50CB1629D0ECBE0069A6E0 /* Cell */,
 				3A99D03029CC7A2000E92547 /* ListHQsViewController.swift */,
 				3A99D03429CC7A7700E92547 /* ListHQsModel.swift */,
 				3A99D03229CC7A4300E92547 /* ListHQsViewModel.swift */,
@@ -335,19 +369,22 @@
 				3A99D03B29CC986900E92547 /* ListHQsTableViewCell.swift in Sources */,
 				3A99D03129CC7A2000E92547 /* ListHQsViewController.swift in Sources */,
 				3A563CE929CAAE4F00A5888A /* Toast+ViewController.swift in Sources */,
-				3A99D03D29CC9C5800E92547 /* UIimage+extensions.swift in Sources */,
 				3A563CB729CAA97400A5888A /* ViewController.swift in Sources */,
 				3A563CEB29CAB06100A5888A /* KeysManager.swift in Sources */,
+				3A50CB1929D12BE00069A6E0 /* CartManager.swift in Sources */,
 				3A563CF129CAB1E600A5888A /* LoginView.swift in Sources */,
 				3A99D03529CC7A7700E92547 /* ListHQsModel.swift in Sources */,
 				3A563CE529CAAE1000A5888A /* MainCoordinator.swift in Sources */,
+				3A50CB1329D0EC860069A6E0 /* DetailHQView.swift in Sources */,
 				3A563CEF29CAB1D500A5888A /* LoginViewController.swift in Sources */,
 				3A99D03329CC7A4300E92547 /* ListHQsViewModel.swift in Sources */,
 				3A563CB329CAA97400A5888A /* AppDelegate.swift in Sources */,
 				3A99D02F29CC79F000E92547 /* ListHQsView.swift in Sources */,
 				3A99D02B29CBBEF300E92547 /* Utils.swift in Sources */,
 				3A563CE729CAAE4700A5888A /* Loading+ViewController.swift in Sources */,
+				3A50CB1529D0EC920069A6E0 /* DetailHQViewModel.swift in Sources */,
 				3A563CF329CAB1FA00A5888A /* LoginViewModel.swift in Sources */,
+				3A50CB1129D0EC6D0069A6E0 /* DetailHQViewController.swift in Sources */,
 				3A563CB529CAA97400A5888A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -74,6 +74,10 @@ extension ListHQsViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.viewModel.openDetail(indexPath: indexPath)
+    }
+    
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         var contextItem: UIContextualAction
         if self.viewModel.isFavorited(indexPath: indexPath) {

@@ -18,7 +18,7 @@ public class ListHQsViewModel {
     let favoriteKey = "favoriteHQs"
     
     
-    var hqs: [Result] = []
+    var hqs: [HQ] = []
     private var favoriteHQs: [Int] = []
     
     init(coordinator: MainCoordinator) {
@@ -45,6 +45,10 @@ public class ListHQsViewModel {
     func isFavorited(indexPath: IndexPath) -> Bool {
         let hqId = hqs[indexPath.row].id
         return favoriteHQs.contains { $0 == hqId }
+    }
+    
+    func openDetail(indexPath: IndexPath) {
+        self.coordinator?.openHQDetail(hq: self.hqs[indexPath.row])
     }
     
     func fetchHQs() async throws {

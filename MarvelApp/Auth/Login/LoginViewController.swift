@@ -39,6 +39,7 @@ class LoginViewController: UIViewController {
     @objc func buttonAction(sender: UIButton!) {
         self.showSpinner(onView: self.mainView)
         viewModel.openApp()
+        self.removeSpinner()
     }
 
 }
