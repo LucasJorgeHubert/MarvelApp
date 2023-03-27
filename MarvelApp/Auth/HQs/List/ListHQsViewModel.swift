@@ -17,10 +17,13 @@ public class ListHQsViewModel {
     let coordinator: MainCoordinator?
     
     let favoriteKey = "favoriteHQs"
+    
+    var limit = 10
+    var offset = 0
     var searchedHQs: [HQ] = []
     var searching = false
-    
     var hqs: [HQ] = []
+    
     private var favoriteHQs: [Int] = []
     
     init(coordinator: MainCoordinator) {
@@ -73,9 +76,25 @@ public class ListHQsViewModel {
         self.coordinator?.cartManager.removeItem(id: getHQs()[indexPath.row].id ?? 0)
     }
     
+    func nextPage() {
+        offset += 10
+        limit += 10
+    }
+    
+    func previusPage() {
+        if offset > 0 {
+            offset -= 10
+            limit -= 10
+        }
+    }
+    
     func fetchHQs() async throws {
         let keys = KeysManager().apiKey
-        var request = URLRequest(url: URL(string: "https://gateway.marvel.com/v1/public/comics?ts=1&apikey=\(keys.0)&hash=\(keys.1)")!)
+        var request = URLRequest(
+            url: URL(
+                string: "https://gateway.marvel.com/v1/public/comics?format=digital%20comic&limit=\(limit)&offset=\(offset)&ts=1&apikey=\(keys.0)&hash=\(keys.1)"
+            )!
+        )
         
         request.httpMethod = "GET"
         
