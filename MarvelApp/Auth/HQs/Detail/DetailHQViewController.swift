@@ -49,8 +49,9 @@ class DetailHQViewController: UIViewController {
     
     @objc func buttonAction(sender: UIButton!) {
         self.showSpinner(onView: self.mainView)
-        self.showToast(text: "Product added in cart", type: .success, onView: self.mainView)
+        self.showToast(text: "Item added to cart", type: .success, onView: self.mainView)
         self.viewModel.buyItem()
+        self.removeSpinner()
     }
 
 }

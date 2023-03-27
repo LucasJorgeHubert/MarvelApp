@@ -16,6 +16,9 @@ class CartManager {
     
     func removeItem(id: Int) {
         let item = itemsInCart.firstIndex { $0.id == id }
+        if let i = item {
+            itemsInCart.remove(at: i)
+        }
     }
     
     func getAllItems() -> [HQ] {
@@ -26,6 +29,14 @@ class CartManager {
         var sumedItems = 0.0
         itemsInCart.forEach { sumedItems += sumPrices(prices: $0.prices ?? [Price(type: "", price: 0.0)]) }
         return sumedItems
+    }
+    
+    func hasItemsInCart() -> Bool {
+        return itemsInCart.count > 0
+    }
+    
+    func itemIsInCart(hq: HQ) -> Bool {
+        return itemsInCart.contains { $0.id ?? 0 == hq.id ?? 0 }
     }
     
     private func sumPrices(prices: [Price]) -> Double {
