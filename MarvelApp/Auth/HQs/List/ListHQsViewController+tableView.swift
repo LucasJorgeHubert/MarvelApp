@@ -10,12 +10,12 @@ import UIKit
 
 extension ListHQsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.viewModel.hqs.count
+        self.viewModel.getHQs().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListExchangesTableViewCell", for: indexPath) as! ListHQsTableViewCell
-        cell.setup(ex: self.viewModel.hqs[indexPath.row], isFavorited: self.viewModel.isFavorited(indexPath: indexPath))
+        cell.setup(ex: self.viewModel.getHQs()[indexPath.row], isFavorited: self.viewModel.isFavorited(indexPath: indexPath))
         
         return cell
     }

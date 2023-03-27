@@ -10,6 +10,7 @@ import UIKit
 class ListHQsViewController: UIViewController {
     
     let viewModel: ListHQsViewModel
+    
     let mainView = ListHQsView()
     
     init(viewModel: ListHQsViewModel) {
@@ -31,6 +32,9 @@ class ListHQsViewController: UIViewController {
         self.navigationItem.title = "HQ's"
         self.navigationItem.largeTitleDisplayMode = .automatic
         self.navigationItem.hidesBackButton = true
+        
+        self.mainView.searchHQs.showsCancelButton = true
+        self.mainView.searchHQs.delegate = self
 
         setupTable()
         setupTableData()
