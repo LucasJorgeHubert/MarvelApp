@@ -17,12 +17,22 @@ public class ListHQsViewModel {
     let coordinator: MainCoordinator?
     
     let favoriteKey = "favoriteHQs"
+    var searchedHQs: [HQ] = []
+    var searching = false
     
     var hqs: [HQ] = []
     private var favoriteHQs: [Int] = []
     
     init(coordinator: MainCoordinator) {
         self.coordinator = coordinator
+    }
+    
+    func getHQs() -> [HQ] {
+        if searching {
+            return self.searchedHQs
+        } else {
+            return self.hqs
+        }
     }
     
     func fetchFavorites() -> [Int] {
@@ -32,9 +42,9 @@ public class ListHQsViewModel {
     func updateFavorites(indexPath: IndexPath, action: FavoriteListActions) {
         switch action {
         case .add:
-            favoriteHQs.append(hqs[indexPath.row].id ?? 0)
+            favoriteHQs.append(getHQs()[indexPath.row].id ?? 0)
         case .remove:
-            let index = favoriteHQs.firstIndex { $0 == hqs[indexPath.row].id ?? 0 }
+            let index = favoriteHQs.firstIndex { $0 == getHQs()[indexPath.row].id ?? 0 }
             if let i = index {
                 favoriteHQs.remove(at: i)
             }
@@ -43,24 +53,24 @@ public class ListHQsViewModel {
     }
     
     func isFavorited(indexPath: IndexPath) -> Bool {
-        let hqId = hqs[indexPath.row].id
+        let hqId = getHQs()[indexPath.row].id
         return favoriteHQs.contains { $0 == hqId }
     }
     
     func itemIsInCart(indexPath: IndexPath) -> Bool {
-        return self.coordinator?.cartManager.itemIsInCart(hq: hqs[indexPath.row]) ?? false
+        return self.coordinator?.cartManager.itemIsInCart(hq: getHQs()[indexPath.row]) ?? false
     }
     
     func openDetail(indexPath: IndexPath) {
-        self.coordinator?.openHQDetail(hq: self.hqs[indexPath.row])
+        self.coordinator?.openHQDetail(hq: self.getHQs()[indexPath.row])
     }
     
     func addToCart(indexPath: IndexPath) {
-        self.coordinator?.cartManager.addItem(item: hqs[indexPath.row])
+        self.coordinator?.cartManager.addItem(item: getHQs()[indexPath.row])
     }
     
     func removeFromCart(indexPath: IndexPath) {
-        self.coordinator?.cartManager.removeItem(id: hqs[indexPath.row].id ?? 0)
+        self.coordinator?.cartManager.removeItem(id: getHQs()[indexPath.row].id ?? 0)
     }
     
     func fetchHQs() async throws {

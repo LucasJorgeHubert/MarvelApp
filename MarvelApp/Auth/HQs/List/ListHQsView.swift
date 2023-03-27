@@ -14,6 +14,8 @@ class ListHQsView: UIView {
         return tv
     }()
     
+    var searchHQs = UISearchBar()
+    
     init() {
         super.init(frame: .zero)
         self.backgroundColor = .systemBackground
@@ -27,14 +29,19 @@ class ListHQsView: UIView {
     
     private func buildViewHierarchy() {
         addSubview(hqsTable)
+        addSubview(searchHQs)
     }
     
     private func setupConstraints() {
         hqsTable.translatesAutoresizingMaskIntoConstraints = false
+        searchHQs.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
+            searchHQs.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 16),
+            searchHQs.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            searchHQs.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             
-            hqsTable.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 16),
+            hqsTable.topAnchor.constraint(equalTo: searchHQs.bottomAnchor, constant: 16),
             hqsTable.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             hqsTable.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             hqsTable.leadingAnchor.constraint(equalTo: self.leadingAnchor)

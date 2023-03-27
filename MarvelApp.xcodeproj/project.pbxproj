@@ -12,6 +12,7 @@
 		3A50CB1529D0EC920069A6E0 /* DetailHQViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50CB1429D0EC920069A6E0 /* DetailHQViewModel.swift */; };
 		3A50CB1929D12BE00069A6E0 /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50CB1829D12BE00069A6E0 /* CartManager.swift */; };
 		3A50CB1B29D13C830069A6E0 /* ListHQsViewController+tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50CB1A29D13C830069A6E0 /* ListHQsViewController+tableView.swift */; };
+		3A50CB2529D149220069A6E0 /* ListHQsViewController+SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50CB2429D149220069A6E0 /* ListHQsViewController+SearchBar.swift */; };
 		3A563CB329CAA97400A5888A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A563CB229CAA97400A5888A /* AppDelegate.swift */; };
 		3A563CB529CAA97400A5888A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A563CB429CAA97400A5888A /* SceneDelegate.swift */; };
 		3A563CB729CAA97400A5888A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A563CB629CAA97400A5888A /* ViewController.swift */; };
@@ -59,6 +60,7 @@
 		3A50CB1429D0EC920069A6E0 /* DetailHQViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHQViewModel.swift; sourceTree = "<group>"; };
 		3A50CB1829D12BE00069A6E0 /* CartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
 		3A50CB1A29D13C830069A6E0 /* ListHQsViewController+tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListHQsViewController+tableView.swift"; sourceTree = "<group>"; };
+		3A50CB2429D149220069A6E0 /* ListHQsViewController+SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListHQsViewController+SearchBar.swift"; sourceTree = "<group>"; };
 		3A563CAF29CAA97400A5888A /* MarvelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A563CB229CAA97400A5888A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A563CB429CAA97400A5888A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				3A50CB1629D0ECBE0069A6E0 /* Cell */,
 				3A99D03029CC7A2000E92547 /* ListHQsViewController.swift */,
 				3A50CB1A29D13C830069A6E0 /* ListHQsViewController+tableView.swift */,
+				3A50CB2429D149220069A6E0 /* ListHQsViewController+SearchBar.swift */,
 				3A99D03429CC7A7700E92547 /* ListHQsModel.swift */,
 				3A99D03229CC7A4300E92547 /* ListHQsViewModel.swift */,
 			);
@@ -390,6 +393,7 @@
 				3A563CF329CAB1FA00A5888A /* LoginViewModel.swift in Sources */,
 				3A50CB1129D0EC6D0069A6E0 /* DetailHQViewController.swift in Sources */,
 				3A563CB529CAA97400A5888A /* SceneDelegate.swift in Sources */,
+				3A50CB2529D149220069A6E0 /* ListHQsViewController+SearchBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
